@@ -269,7 +269,14 @@ namespace Werd.Controls
 		{
 			try
 			{
-				VisualStateManager.GoToState(this, "PreviewAuthorRight", false);
+				if (Comment.IsSelected)
+				{
+					VisualStateManager.GoToState(this, "FullViewAuthorRight", false);
+				}
+				else
+				{
+					VisualStateManager.GoToState(this, "PreviewAuthorRight", false);
+				}
 			}
 			catch (Exception ex)
 			{
